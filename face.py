@@ -5,7 +5,7 @@ import datetime as dt
 from time import sleep
 from vol import soundChange
 
-cascPath = "haarcascade_frontalface_default.xml"
+cascPath = "./data/haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascPath)
 video_capture = cv2.VideoCapture(0)
 
@@ -34,7 +34,7 @@ while True:
         AreaAvg += (w*h)
     if AbsCapture == 0:
         AbsCapture = AreaAvg
-        print("Initial Captre area : ",AbsCapture)
+        print("Initial Capture area : ",AbsCapture)
     else:
         perChange = (AbsCapture-AreaAvg)/AbsCapture
         AbsCapture = AreaAvg        
